@@ -20,17 +20,13 @@ void board_printBoardStatus(void)
 {
 	int i;
 	
-	printf("------------------ BOARD STATUS ---------------------");
+	printf("------------------ BOARD STATUS ---------------------\n");
 	for (i=0;i<N_BOARD;i++)
 	{
-		printf("|");
-		if (board_status[i] == BOARDSTATUS_NOK)
-			printf("X");
-		else
-			printf("O");
+		printf("|%i", board_coin[i]);
 	}
 	printf("|\n"); 
-	printf("------------------ BOARD STATUS ---------------------");
+	printf("------------------ BOARD COIN ---------------------\n");
 }
 
 void board_getBoardStatus(int pos)
