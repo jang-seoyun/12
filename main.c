@@ -48,7 +48,7 @@ int main(int argc, char *argv[])
 	
 	coinResult=board_getBoardCoin(pos);
 	
-	printf("coin:%i\n");
+	printf("coin:%i\n", coinResult);
 	
 	// 2-4. change turn, shark move
 	cnt++;
