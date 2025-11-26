@@ -36,6 +36,7 @@ void board_getBoardStatus(int pos)
 
 int board_getBoardCoin(int pos)
 {
+	board_coin[pos] = 0;
 	return board_coin[pos];
 }
 
