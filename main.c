@@ -48,8 +48,9 @@ void printPlayerStatus(void)
 		printf("%s : pos %i, coin %i, status %s\n", 
 		player_name[i],
 		player_position[i],
+		player_coin[i],
 		player_statusString[player_status[i]]);
-		printPlayerPosition(i);
+		//printPlayerPosition(i);
 	}
 }
 
@@ -60,7 +61,7 @@ void initPlayer(void)
 	{
 		player_position[i] = 0;
 		player_coin[i] = 0;
-		player_status[N_PLAYER] = PLAYERSTATUS_LIVE;
+		player_status[i] = PLAYERSTATUS_LIVE;
 		printf("Player %i's name:",i );
 		scanf("%s", player_name[i]);
 		fflush(stdin);
@@ -89,11 +90,9 @@ int main(int argc, char *argv[])
 	printf("*********************************************\n");
 	printf("=============================================\n"); 
 	
-	//step 1. initialization (player name setting, variables)
-	board_initBoard();
-	initPlayer();
-	//playrt init
+	 
 	
+	#if 0
 	//step 2. turn play (do-while)
 	cnt=0;
 	turn=0;
@@ -131,7 +130,7 @@ int main(int argc, char *argv[])
 	//shark move
 	cnt++;
 	} while(cnt<5); // game and condition
-	
+	#endif
 	
 	//step 3. game end (winner printing)
 	
