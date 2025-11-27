@@ -1,3 +1,4 @@
+
 #if 0
 int board_initBoard(void);
 int board_getBoardStatus(int pos);
@@ -7,8 +8,9 @@ int board_getBoardCoin(int pos);
 #endif
 
 #define N_BOARD                 20
-#define BOARDSTATUS_NOK         1
-#define BOARD_NOK               0
+#define BOARDSTATUS_OK         1 
+#define BOARDSTATUS_NOK        0    
+#include "board.h"    
 #define N_COINPOS               12
 #define MAX_COIN                4
 
@@ -23,13 +25,13 @@ void board_printBoardStatus(void)
 	printf("------------------ BOARD STATUS ---------------------\n");
 	for (i=0;i<N_BOARD;i++)
 	{
-		printf("|%i", board_coin[i]);
+		printf("|%d", board_coin[i]);
 	}
 	printf("|\n"); 
 	printf("------------------ BOARD COIN ---------------------\n");
 }
 
-void board_getBoardStatus(int pos)
+int board_getBoardStatus(int pos)
 {
 	return board_status[pos];
 }
@@ -40,8 +42,7 @@ int board_getBoardCoin(int pos)
 	board_coin[pos] = 0;
 	return coin;
 }
-
-int board_initBoard(void)
+void board_initBoard(void)
 {
 	int i;
 	//initialize arrays
